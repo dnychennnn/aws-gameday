@@ -1,0 +1,17 @@
+testsvc is a program to help you test if the services you or other players have deployed are working properly.
+
+In this zip file, there are 3 versions of the same program each one built for x86_64:
+
+* testsvc.linux - for Linux operating systems
+* testsvc.osx - for Mac OS X
+* testsvc.exe - for Windows
+
+Use the one for your operating system.
+
+Usage: testsvc [-hash HASH] serviceURI
+
+serviceURI must include a protocol. This means things like 1.2.3.4 won't work, but http://1.2.3.4 will.
+
+HASH is your team's hash. If you run this program without the hash, the program will send a test message to the service at serviceURI and attempt to detect the response and determine if it is correct or not. This is useful for testing other team's services.
+
+If you provide a hash, the program will also check to see that the signature returned by the service matches what the tester calculates with the provided hash. This is useful to test your own services to make sure they are correctly signing the messages.
